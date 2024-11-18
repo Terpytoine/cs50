@@ -1,0 +1,33 @@
+BEGIN
+
+    DECLARE integer variable 'height'
+
+    // Ask for the height of the pyramid (minimum of 8)
+    REPEAT
+        ASK user for input 'height' (use get_int)
+    UNTIL 'height' >= 8
+
+    // Loop through each row from 1 to the height
+    FOR each row from 1 to 'height' DO
+
+        // Print spaces before the hashes to center the pyramid
+        FOR each space from (height - row) DOWN TO 1 DO
+            PRINT a space
+
+        // Print the left side hashes of the pyramid
+        FOR each hash from 1 to 'row' DO
+            PRINT a hash
+
+        // Print a space in between the left and right parts of the pyramid
+        PRINT a space
+
+        // Print the right side hashes of the pyramid
+        FOR each hash from 1 to 'row' DO
+            PRINT a hash
+
+        // Move to the next line after completing the row
+        PRINT a newline (move to next row)
+
+    END FOR
+
+END
